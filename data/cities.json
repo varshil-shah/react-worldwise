@@ -35,6 +35,30 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Mumbai",
+      "country": "India",
+      "emoji": "in",
+      "date": "2024-01-06T05:27:11.021Z",
+      "notes": "My all time favourite city 😍",
+      "position": {
+        "lat": "18.79191774423444",
+        "lng": "72.99316406250001"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Surat",
+      "country": "India",
+      "emoji": "in",
+      "date": "2024-01-06T05:37:05.233Z",
+      "notes": "The smartest city of gujarat",
+      "position": {
+        "lat": "21.166483858206583",
+        "lng": "72.83935546875001"
+      },
+      "id": 98443199
     }
   ]
 }

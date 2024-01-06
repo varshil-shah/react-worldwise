@@ -15,7 +15,7 @@ import Button from "./Button";
 import { useUrlPosition } from "../hooks/useUrlPosition";
 
 function Map() {
-  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [mapPosition, setMapPosition] = useState([18, 72]);
 
   const { cities } = useCities();
   const {
