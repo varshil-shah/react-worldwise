@@ -92,7 +92,7 @@ function Form() {
     setDate(new Date());
     setNotes("");
 
-    navigate("app/cities");
+    navigate("/app/cities");
   }
 
   if (isLoadingGeocoding) return <Spinner />;
