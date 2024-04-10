@@ -1,42 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "pt",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "de",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
-      "cityName": "Mumbai",
-      "country": "India",
-      "emoji": "in",
-      "date": "2024-01-06T05:27:11.021Z",
-      "notes": "My all time favourite city 😍",
-      "position": {
-        "lat": "18.79191774423444",
-        "lng": "72.99316406250001"
-      },
-      "id": 98443198
-    },
-    {
       "cityName": "Surat",
       "country": "India",
       "emoji": "in",
@@ -47,6 +11,30 @@
         "lng": "72.83935546875001"
       },
       "id": 98443199
+    },
+    {
+      "cityName": "Mumbai",
+      "country": "India",
+      "emoji": "in",
+      "date": "2024-04-10T16:05:43.912Z",
+      "notes": "Home city.",
+      "position": {
+        "lat": "18.895892559415024",
+        "lng": "72.90527343750001"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Chanasma",
+      "country": "India",
+      "emoji": "in",
+      "date": "2024-04-10T16:06:03.627Z",
+      "notes": "Native place.",
+      "position": {
+        "lat": "23.704894502324912",
+        "lng": "72.13348388671876"
+      },
+      "id": 98443201
     }
   ]
 }
