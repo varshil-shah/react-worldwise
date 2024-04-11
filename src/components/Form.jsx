@@ -74,6 +74,7 @@ function Form() {
     if (!cityName || !date) return;
 
     const newCity = {
+      id: Date.now(),
       cityName,
       country,
       emoji: emoji.toLowerCase(),

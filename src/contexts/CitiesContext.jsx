@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://api.jsonbin.io/v3/b/6616ca4dad19ca34f857ef0f";
 
 const citiesContext = createContext();
 
@@ -56,9 +56,9 @@ function CitiesProvider({ children }) {
     async function fetchCities() {
       try {
         dispatch({ type: "loading" });
-        const response = await fetch(`${BASE_URL}/cities`);
+        const response = await fetch(`${BASE_URL}`);
         const data = await response.json();
-        dispatch({ type: "cities/loaded", payload: data });
+        dispatch({ type: "cities/loaded", payload: data.record.cities });
       } catch (error) {
         console.error(error);
         dispatch({
@@ -75,9 +75,12 @@ function CitiesProvider({ children }) {
 
     dispatch({ type: "loading" });
     try {
-      const response = await fetch(`${BASE_URL}/cities/${id}`);
+      const response = await fetch(`${BASE_URL}`);
       const data = await response.json();
-      dispatch({ type: "city/loaded", payload: data });
+      const cityData = data.record.cities.find(
+        (city) => city.id === Number(id)
+      );
+      if (cityData) dispatch({ type: "city/loaded", payload: cityData });
     } catch (error) {
       console.error(error);
       dispatch({
@@ -90,17 +93,18 @@ function CitiesProvider({ children }) {
   async function createCity(newCity) {
     try {
       dispatch({ type: "loading" });
-      const response = await fetch(`${BASE_URL}/cities`, {
-        method: "POST",
+      const response = await fetch(`${BASE_URL}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newCity),
+        body: JSON.stringify([...cities, newCity]),
       });
       const data = await response.json();
+      if (!data) throw new Error("An error occurred while creating city!");
       dispatch({
         type: "city/created",
-        payload: data,
+        payload: newCity,
       });
     } catch (error) {
       console.error(error);
@@ -114,8 +118,13 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     try {
       dispatch({ type: "loading" });
-      await fetch(`${BASE_URL}/cities/${id}`, {
-        method: "DELETE",
+      const citiesCopy = cities.filter((city) => city.id !== id);
+      await fetch(`${BASE_URL}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(citiesCopy),
       });
       dispatch({
         type: "city/deleted",
